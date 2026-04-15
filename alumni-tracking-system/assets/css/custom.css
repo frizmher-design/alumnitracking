@@ -1,0 +1,113 @@
+/* GENERAL */
+body {
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(180deg, #0d1b2a, #1b263b);
+}
+
+/* MENU LINKS */
+.menu-link {
+    display: block;
+    padding: 10px;
+    color: #e0e1dd;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.menu-link:hover {
+    background: #415a77;
+    color: #fff;
+}
+
+/* ACTIVE LINK (optional later) */
+.menu-link.active {
+    background: #ffc107;
+    color: black;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 240px;
+}
+
+/* NAVBAR */
+.navbar {
+    border-radius: 0 0 10px 10px;
+}
+
+/* CARDS */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+
+
+/* DASHBOARD COLORS */
+.card-primary {
+    background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+    color: white;
+}
+
+.card-success {
+    background: linear-gradient(135deg, #198754, #20c997);
+    color: white;
+}
+
+.card-danger {
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
+    color: white;
+}
+
+/* TABLE */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: #0d1b2a;
+    color: white;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+/* FORM INPUTS */
+.form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+/* SCROLLBAR (optional but nice) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 5px;
+}
