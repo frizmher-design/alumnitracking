@@ -30,84 +30,105 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Alumni Tracking System</title>
 
-<link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url('../assets/images/background-image.jpg') no-repeat center center/cover;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-body {
-    margin: 0;
-    height: 100vh;
-    background: url('../assets/images/background-image.jpg') no-repeat center center/cover;
-    font-family: 'Segoe UI', sans-serif;
-}
+        .overlay {
+            background: rgba(0, 0, 0, 0.65);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.overlay {
-    background: rgba(0, 0, 0, 0.65);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .login-card {
+            width: 370px;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            color: #fff;
+        }
 
-.login-card {
-    width: 370px;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    color: #fff;
-}
+        /* Logo and Header Styling */
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
 
-.login-card h3 {
-    font-weight: bold;
-}
+        .brand-logo {
+            width: 45px; /* Adjust size as needed */
+            height: 45px;
+            object-fit: contain;
+        }
 
-.form-control {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-}
+        .login-card h3 {
+            font-weight: bold;
+            margin: 0;
+        }
 
-.form-control::placeholder {
-    color: #ddd;
-}
+        .form-control {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+        }
 
-.form-control:focus {
-    background: rgba(255,255,255,0.3);
-    color: white;
-    box-shadow: none;
-}
+        .form-control::placeholder {
+            color: #ddd;
+        }
 
-.btn-login {
-    background-color: #ffc107;
-    border: none;
-    color: black;
-    font-weight: bold;
-}
+        .form-control:focus {
+            background: rgba(255,255,255,0.3);
+            color: white;
+            box-shadow: none;
+        }
 
-.btn-login:hover {
-    background-color: #e0a800;
-}
+        .btn-login {
+            background-color: #ffc107;
+            border: none;
+            color: black;
+            font-weight: bold;
+        }
 
-.btn-register {
-    border: 1px solid #fff;
-    color: white;
-}
+        .btn-login:hover {
+            background-color: #e0a800;
+        }
 
-.btn-register:hover {
-    background: white;
-    color: black;
-}
+        .btn-register {
+            border: 1px solid #fff;
+            color: white;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            padding: 8px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
 
-.small-text {
-    font-size: 13px;
-    color: #ccc;
-}
+        .btn-register:hover {
+            background: white;
+            color: black;
+        }
 
-</style>
+        .small-text {
+            font-size: 13px;
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
@@ -116,18 +137,22 @@ body {
 
     <div class="login-card shadow">
 
-        <h3 class="text-center mb-2">🎓 Alumni System</h3>
-        <p class="text-center small-text mb-3">Sign in to continue</p>
+        <div class="brand-wrapper">
+            <img src="../assets/images/logo.jpg.jpg " alt="Logo" class="brand-logo">
+            <h3>Alumni System</h3>
+        </div>
+        
+        <p class="text-center small-text mb-4">Sign in to continue</p>
 
         <?php if($error): ?>
-            <div class="alert alert-danger"><?php echo $error; ?></div>
+            <div class="alert alert-danger py-2" style="font-size: 14px;"><?php echo $error; ?></div>
         <?php endif; ?>
 
         <form method="POST">
             <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
             <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
 
-            <button class="btn btn-login w-100 mb-2">Login</button>
+            <button type="submit" class="btn btn-login w-100 mb-2">Login</button>
         </form>
 
         <a href="register.php" class="btn btn-register w-100">Create Account</a>
